@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adminstator Control Panel</title>
+    <script src="javascript/details.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script src="javascript/admin.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <header class="header">
+            <div class="float-left">
+                <button type="button" class="btn" onclick="showMenu()"><i class="fas fa-bars text-white"></i></button>
+            </div>
+            <div class="info_admin">
+                <a href="#" class="btn"><i class="fas fa-users-cog text-white"></i></a>
+                <strong>Adminstator</strong>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-flag text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-bell text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-envelope text-white"></i></a>
+            </div>
+        </header>
+        <!-- body amin -->
+        <main>
+            <div class="row">
+                <!-- menu -->
+                <div class="col-lg-3" id="menu">
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./admin.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold">  -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./charity.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-copy"></i> Nhà hảo tâm
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./users.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fa fa-users"></i> Quản lý người dùng
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_ dropdown">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-tasks"></i> Quản lý Chiến dịch
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến
+                                dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaignList.html">Chiến dịch chờ phê duyệt</a>
+                        </div>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-chart-line"></i> Biểu đồ
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-calendar-alt"></i> Calendar
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-file-alt"></i> Documentation
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-9" id="content">
+                    <div class="bg-white border border-dark">
+                        <p class="text-center font-weight-bold">Danh sách người dùng</p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col" class="text-left">Tài khoản</th>
+                                    <th scope="col" class="text-left">Họ và tên</th>
+                                    <th scope="col">Số ĐT</th>
+                                    <th scope="col">Giới tính</th>
+                                    <th scope="col">Ngày sinh</th>
+                                    <th scope="col">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td class="text-left">LinhNV</td>
+                                    <td class="text-left">Nguyễn Văn Linh</td>
+                                    <td>09302312123</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus1"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus1','inactiveStatus1');">
+                                                    <p class="text-white">Dừng hoạt động</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">TruongTN</td>
+                                    <td class="text-left">Thân Nhật Trường</td>
+                                    <td>09123125776</td>
+                                    <td>Nam</td>
+                                    <td>12/12/1942</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus2"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus2" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus2','inactiveStatus2');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">NhiHN</td>
+                                    <td class="text-left">Hoàng Ngọc Nhi</td>
+                                    <td>099402932</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1999</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus3"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus3','inactiveStatus3');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">MinhNT</td>
+                                    <td class="text-left">Nguyễn Nhật Minh</td>
+                                    <td>0992837261</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1995</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="inactiveStatus4"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: red; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Khoá tài khoản</p>
+                                            </button>
+
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="activeStatus4" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus4','inactiveStatus4');">
+                                                    <p class="text-white">Hoạt động</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">AnhNT</td>
+                                    <td class="text-left">Nguyễn Thuý Anh</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus5"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus5" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus5','inactiveStatus5');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">ToanVT</td>
+                                    <td class="text-left">Võ Tiến Toàn</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus6"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus6" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus6','inactiveStatus6');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">NhatTT</td>
+                                    <td class="text-left">Trần Thành Nhật</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="inactiveStatus7"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: red; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Khoá tài khoản</p>
+                                            </button>
+
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="activeStatus7" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus7','inactiveStatus7');">
+                                                    <p class="text-white">Hoạt động</p>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">LinhHN</td>
+                                    <td class="text-left">Hoàng Ngọc Linh</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus8"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus8" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus8','inactiveStatus8');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">TramNK</td>
+                                    <td class="text-left">Nguyễn Kim Trâm</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus9"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus9" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus9','inactiveStatus9');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">TuanVT</td>
+                                    <td class="text-left">Võ Trọng Tuấn</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus10"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus10" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus10','inactiveStatus10');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">NhiNN</td>
+                                    <td class="text-left">Nguyễn Ngọc Nhi</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus11"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus11" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus11','inactiveStatus11');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">NamHN</td>
+                                    <td class="text-left">Hoàng Nhật Nam</td>
+                                    <td>0930239232</td>
+                                    <td>Nam</td>
+                                    <td>10/10/1910</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activeStatus12"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoạt động</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: inherit; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="inactiveStatus12" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activeStatus12','inactiveStatus12');">
+                                                    <p class="text-white">Khoá tài khoản</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer>
+            <center style="font-size: 14px;">&copy; Coppyright 2019 </center>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function changeStatus(id_01, id_02) {
+        var a = document.getElementById(id_01).style.backgroundColor;
+        document.getElementById(id_01).style.backgroundColor = document.getElementById(id_02).style.backgroundColor;
+        document.getElementById(id_02).style.backgroundColor = a;
+
+
+        var texta = document.getElementById(id_01).getElementsByTagName('p')[0].lastChild.nodeValue;
+        document.getElementById(id_01).getElementsByTagName('p')[0].lastChild.nodeValue = document.getElementById(id_02).getElementsByTagName('p')[0].lastChild.nodeValue;
+        document.getElementById(id_02).getElementsByTagName('p')[0].lastChild.nodeValue = texta;
+    }
+</script>
