@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adminstator Control Panel</title>
+    <script src="javascript/details.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script src="javascript/admin.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <header class="header">
+            <div class="float-left">
+                <button type="button" class="btn" onclick="showMenu()"><i class="fas fa-bars text-white"></i></button>
+            </div>
+            <div class="info_admin">
+                <a href="#" class="btn"><i class="fas fa-users-cog text-white"></i></a>
+                <strong>Adminstator</strong>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-flag text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-bell text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-envelope text-white"></i></a>
+            </div>
+        </header>
+        <!-- body amin -->
+        <main>
+            <div class="row">
+                <!-- menu -->
+                <div class="col-lg-3" id="menu">
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./admin.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold">  -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./charity.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-copy"></i> Nhà hảo tâm
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./users.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fa fa-users"></i> Quản lý người dùng
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_ dropdown">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-tasks"></i> Quản lý Chiến dịch
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến
+                                dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaignList.html">Chiến dịch
+                                chờ phê duyệt</a>
+                        </div>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-chart-line"></i> Biểu đồ
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-calendar-alt"></i> Calendar
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-file-alt"></i> Documentation
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-9" id="content">
+                    <div class="bg-white border border-dark">
+                        <p class="text-center font-weight-bold">Danh sách chiến dịch</p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col" class="text-left">Tên chiến dịch</th>
+                                    <th scope="col" class="text-left">Địa điểm</th>
+                                    <th scope="col">Ngày tạo</th>
+                                    <th scope="col">Người tạo</th>
+                                    <th scope="col">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td class="text-left">Giải cứu thăng long</td>
+                                    <td class="text-left">Đồng Nai</td>
+                                    <td>12/12/1942</td>
+                                    <td>Ngọc Trinh</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="waitStatus1"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #007bff; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Chờ phê duyệt</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="acceptStatus1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #ffc107; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('waitStatus1','acceptStatus1');">
+                                                    <p class="text-white">Chấp nhận</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="dinieStatus1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #6c757d; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('waitStatus1','dinieStatus1');">
+                                                    <p class="text-white">Từ chối</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Chung tay xây dựng nhà tình thương</td>
+                                    <td class="text-left">Quảng Bình</td>
+                                    <td>12/12/1942</td>
+                                    <td>Hoàng Thuỳ Linh</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="waitStatus2"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #007bff; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Chờ phê duyệt</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="acceptStatus2" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #ffc107; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('waitStatus2','acceptStatus2');">
+                                                    <p class="text-white">Chấp nhận</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="dinieStatus2" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #6c757d; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('waitStatus2','dinieStatus2');">
+                                                    <p class="text-white">Từ chối</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hướng về miền Trung</td>
+                                    <td class="text-left">Đà Nẵng</td>
+                                    <td>10/10/1999</td>
+                                    <td>Biện Ngọc Nhi</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activityStatus1"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Đang diễn ra</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="waitCharityStatus1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activityStatus1','waitCharityStatus1');">
+                                                    <p class="text-white">Chờ quyên góp</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="finishStaus1" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('activityStatus1','finishStaus1');">
+                                                    <p class="text-white">Hoàn Thành</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hướng về Biển Đông</td>
+                                    <td class="text-left">Nha Trang</td>
+                                    <td>10/10/2020</td>
+                                    <td>Hoàng Oanh</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button" id="activityStatus2"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Đang diễn ra</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="waitCharityStatus2" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('activityStatus2','waitCharityStatus2');">
+                                                    <p class="text-white">Chờ quyên góp</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="finishStatus2" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('activityStatus2','finishStatus2');">
+                                                    <p class="text-white">Hoàn Thành</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Vì tương lai đất nước</td>
+                                    <td class="text-left">Nghệ An</td>
+                                    <td>10/10/2020</td>
+                                    <td>Nguyễn Việt Văn</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button"
+                                                id="waitCharity3" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Chờ quyên góp</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button" id="activityStatus3"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('waitCharity3','activityStatus3');">
+                                                    <p class="text-white">Đang diễn ra</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="finishStatus3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('waitCharity3','finishStatus3');">
+                                                    <p class="text-white">Hoàn Thành</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Giải cứu rau xanh</td>
+                                    <td class="text-left">Quận 9</td>
+                                    <td>02/10/2020</td>
+                                    <td>Hồ Ngọc Hà</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button"
+                                                id="waitCharity4" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Chờ quyên góp</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="text-white border-0" type="button" id="activityStatus4"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('waitCharity4','activityStatus4');">
+                                                    <p class="text-white">Đang diễn ra</p>
+                                                </button>
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="finishStatus4" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: red; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('activityStatus4','finishStatus4');">
+                                                    <p class="text-white">Hoàn Thành</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Chung tay xây dựng ước mơ</td>
+                                    <td class="text-left">Nhà tao</td>
+                                    <td>12/09/2020</td>
+                                    <td>Trấn Thành</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button"
+                                                id="finishStatus5" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                style="background-color: red; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;">
+                                                <p class="text-white">Hoàn Thành</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="waitCharify5" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('finishStatus5','waitCharify5');">
+                                                    <p class="text-white">Chờ quyên góp</p>
+                                                </button>
+                                                <button class="text-white border-0" type="button" id="activityStatus5"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('finishStatus5','activityStatus5');">
+                                                <p class="text-white">Đang diễn ra</p>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Đấu trường danh vọng</td>
+                                    <td class="text-left">Ninh Bình</td>
+                                    <td>10/10/2020</td>
+                                    <td>Hoàng Vũ Điệp</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="text-white border-0" type="button"
+                                                id="finishStatus6" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                style="background-color: red; border-radius: 5px; height: 30px; width: 160px;">
+                                                <p class="text-white">Hoàn Thành</p>
+                                            </button>
+                                            <div class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton"
+                                                style="background-color: whitesmoke; border: none;">
+                                                <button class="dropdown-item text-white text-center" type="button"
+                                                    id="waitCharify6" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="background-color: #f39c12; border-radius: 5px; height: 30px; width: 160px;"
+                                                    onclick="changeStatus('finishStatus6','waitCharify6');">
+                                                    <p class="text-white">Chờ quyên góp</p>
+                                                </button>
+                                                <button class="text-white border-0" type="button" id="activityStatus6"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                    style="background-color: #00a65a; border-radius: 5px; height: 30px; width: 160px; margin-top: 7px;"
+                                                    onclick="changeStatus('finishStatus6','activityStatus6');">
+                                                <p class="text-white">Đang diễn ra</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer>
+            <center style="font-size: 14px;">&copy; Coppyright 2019 </center>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function changeStatus(id_01, id_02) {
+        var a = document.getElementById(id_01).style.backgroundColor;
+        document.getElementById(id_01).style.backgroundColor = document.getElementById(id_02).style.backgroundColor;
+        document.getElementById(id_02).style.backgroundColor = a;
+
+
+        var texta = document.getElementById(id_01).getElementsByTagName('p')[0].lastChild.nodeValue;
+        document.getElementById(id_01).getElementsByTagName('p')[0].lastChild.nodeValue = document.getElementById(id_02).getElementsByTagName('p')[0].lastChild.nodeValue;
+        document.getElementById(id_02).getElementsByTagName('p')[0].lastChild.nodeValue = texta;
+    }
+</script>
