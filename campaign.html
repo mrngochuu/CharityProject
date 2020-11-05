@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Adminstator Control Panel</title>
+		<script src="javascript/details.js" type="text/javascript" charset="utf-8" async defer></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/admin.css">
+		<script src="javascript/admin.js" type="text/javascript" charset="utf-8" async defer></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!-- header -->
+			<header class="header">
+				<div class="float-left">
+					<button type="button" class="btn" onclick="showMenu()"><i class="fas fa-bars text-white"></i></button>
+				</div>
+				<div class="info_admin">
+					<a href="#" class="btn"><i class="fas fa-users-cog text-white"></i></a>
+					<strong>Adminstator</strong>
+				</div>
+				<div class="icon">
+					<a href="#" class="btn"><i class="far fa-flag text-white"></i></a>
+				</div>
+				<div class="icon">
+					<a href="#" class="btn"><i class="far fa-bell text-white"></i></a>
+				</div>
+				<div class="icon">
+					<a href="#" class="btn"><i class="far fa-envelope text-white"></i></a>
+				</div>
+			</header>
+			<!-- body amin -->
+			<main>
+				<div class="row">
+					<!-- menu -->
+					<div class="col-lg-3" id="menu">
+						<div class="list-group-item menu_">
+							<!-- <a href="#" class="font-weight-bold"></a> -->
+							<button class="font-weight-bold text-white" onclick="window.location.href='./admin.html'" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="fas fa-tachometer-alt"></i> Dashboard
+							</button>
+						</div>
+						<div class="list-group-item menu_">
+							<!-- <a href="#" class="font-weight-bold">  -->
+							<button class="font-weight-bold text-white" onclick="window.location.href='./charity.html'" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="fas fa-copy"></i> Nhà hảo tâm
+							</button>
+						</div>
+						<div class="list-group-item menu_ dropdown">
+							<!-- <a href="#" class="font-weight-bold dropdown-toggle"><i class="fas fa-tasks"></i> Quản lý Chiến dịch</a> -->
+							<button class="font-weight-bold text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="fas fa-tasks"></i> Quản lý Chiến dịch
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến dịch</a>
+								<a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+							</div>					
+						</div>
+						<div class="list-group-item menu_">
+							<button class="font-weight-bold text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="fas fa-chart-line"></i> Biểu đồ
+							</button>
+						</div>
+						<div class="list-group-item menu_">
+							<button class="font-weight-bold text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="far fa-calendar-alt"></i> Calendar
+							</button>
+						</div>
+						<div class="list-group-item menu_">
+							<button class="font-weight-bold text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: inherit; border: none;">
+								<i class="far fa-file-alt"></i> Documentation
+							</button>
+						</div>
+					</div>
+					<div class="col-lg-9" id="content">
+						<form class="needs-validation" novalidate>
+                            <div class="form-row">
+                              <div class="col-md-8 mb-3">
+                                <label for="validationCustom01">Tên chiến dịch</label>
+                                <input type="text" class="form-control" id="validationCustom01" placeholder="Tên chiến dịch" required>
+                                <div class="invalid-feedback">
+                                  Tên chiến dịch là bắt buộc.
+                                </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                <label for="validationCustomUsername">Người đại diện</label>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                  </div>
+                                  <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                                  <div class="invalid-feedback">
+                                    Tên người đại diện là bắt buộc.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-5 input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroupFile01">Hình ảnh</span>
+                                    </div>
+                                    <div class="custom-file">
+                                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFile01" required>
+                                      <label class="custom-file-label" for="inputGroupFile01">Chọn ảnh</label>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Hình ảnh là bắt buộc.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-5 bg-light mb-3 ml-1 rounded" style="min-height: 300px; max-width: 300px; border: 1px solid #ced4da">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label for="validationCustomUsername" class="ml-1">Mô tả</label>
+                                <div class="input-group ml-1 pr-2">
+                                  <textarea type="text" class="form-control" rows="5" id="validationCustomUsername" placeholder="Mô tả" aria-describedby="inputGroupPrepend" required></textarea>
+                                  <div class="invalid-feedback">
+                                    Mô tả là bắt buộc.
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-md-6 mb-3">
+                                <label for="validationCustom03">Tỉnh/Thành</label>
+                                <input type="text" class="form-control" id="validationCustom03" placeholder="Tỉnh/Thành" required>
+                                <div class="invalid-feedback">
+                                    Tỉnh/Thành là bắt buộc.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom04">Quận/Huyện</label>
+                                    <input type="text" class="form-control" id="validationCustom04" placeholder="Quận/Huyện" required>
+                                    <div class="invalid-feedback">
+                                        Quận/Huyện là bắt buộc.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom06">Ngày bắt đầu</label>
+                                    <input class="form-control" type="datetime-local" id="validationCustom06" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                        Ngày bắt đầu là bắt buộc.
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary col-md-12" type="submit">Tạo chiến dịch</button>
+                          </form>
+					</div>
+					
+				</div>
+			</main>
+			<footer>
+				<center style="font-size: 14px;">&copy; Coppyright 2019 </center>
+			</footer>
+		</div>
+	</body>
+</html>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+</script>
