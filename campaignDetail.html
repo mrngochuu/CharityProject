@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adminstator Control Panel</title>
+    <script src="javascript/details.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script src="javascript/admin.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <header class="header">
+            <div class="float-left">
+                <button type="button" class="btn" onclick="showMenu()"><i class="fas fa-bars text-white"></i></button>
+            </div>
+            <div class="info_admin">
+                <a href="#" class="btn"><i class="fas fa-users-cog text-white"></i></a>
+                <strong>Adminstator</strong>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-flag text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-bell text-white"></i></a>
+            </div>
+            <div class="icon">
+                <a href="#" class="btn"><i class="far fa-envelope text-white"></i></a>
+            </div>
+        </header>
+        <!-- body amin -->
+        <main>
+            <div class="row">
+                <!-- menu -->
+                <div class="col-lg-3" id="menu">
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./admin.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold">  -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./charity.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fas fa-copy"></i> Nhà hảo tâm
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <!-- <a href="#" class="font-weight-bold"></a> -->
+                        <button class="font-weight-bold text-white" onclick="window.location.href='./users.html'"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="background-color: inherit; border: none;">
+                            <i class="fa fa-users"></i> Quản lý người dùng
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_ dropdown">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-tasks"></i> Quản lý Chiến dịch
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến
+                                dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaignList.html">Chiến dịch
+                                chờ phê duyệt</a>
+                        </div>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="fas fa-chart-line"></i> Biểu đồ
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-calendar-alt"></i> Calendar
+                        </button>
+                    </div>
+                    <div class="list-group-item menu_">
+                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="background-color: inherit; border: none;">
+                            <i class="far fa-file-alt"></i> Documentation
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-9" id="content">
+                    <!-- Chart -->
+                    <div class="row mt-lg-3">
+                        <div class="col-lg-12 row bg-white"
+                            style="border-top: 2px solid ; border-radius: 5px;height: 100%; min-height: 400px;">
+                            <div class="col-lg-4">
+                                <img src="./img/campaign/campaign.jpg" alt=""
+                                    style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;"
+                                    width="250px" height="250px">
+                            </div>
+                            <div class="col-lg-8 mt-2">
+                                <p class="text-center font-weight-bold">Hướng về miền chung thân yêu</p>
+                                <div class="col-lg-12 row">
+                                    <div class="col-lg-6">
+                                        <p class="text-left"><b>Tên người tạo:</b> Thuỷ Tiên</p>
+                                        <p><b>Tài khoản người tạo:</b> Thuỷ Tiên</p>
+                                        <p><b>Tài khoản admin:</b>TruongTN</p>
+                                    </div>
+                                    <div class="col-lg-6 text-left">
+                                        <p><b>Địa điểm:</b> Nha Trang</p>
+                                        <p><b>Thời gian bắt đầu:</b> 09/01/2020 08:08:00</p>
+                                        <p><b>Dự kiến thúc:</b> 20/11/2020 00:00:00</p>
+                                        <p><b>Tổng tiền quyên góp:</b> 100,000,000 VND</p>
+                                        <p><b>Tổng tiền chi tiêu:</b> 55,000,000 VND</p>
+                                        <p><b>Số tiền còn lại:</b> 45,000,000 VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer>
+            <center style="font-size: 14px;">&copy; Coppyright 2019 </center>
+        </footer>
+    </div>
+</body>
+
+</html>
