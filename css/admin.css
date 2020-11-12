@@ -124,3 +124,27 @@ table tr:hover {
 .row {
 	margin: 0;
 }
+
+.text-campaign {
+	font-size: 14px;
+	border: 1px solid black;
+	max-width: 100%;
+	border-radius: 5px;
+	padding: 10px 0;
+}
+
+#more {
+	display: none;
+}
+
+.readMoreBtn {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	/*optional*/
+	font-family: arial, sans-serif;
+	/*input has OS specific font-family*/
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+}
