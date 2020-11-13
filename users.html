@@ -73,43 +73,79 @@
                             <i class="fas fa-tasks"></i> Quản lý Chiến dịch
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến
-                                dịch</a>
-                            <a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến dịch</a>
                             <a class="dropdown-item font-weight-bold text-dark" href="./campaignList.html">Danh sách chiến dịch</a>
                         </div>
                     </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="fas fa-chart-line"></i> Biểu đồ
-                        </button>
-                    </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="far fa-calendar-alt"></i> Calendar
-                        </button>
-                    </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="far fa-file-alt"></i> Documentation
-                        </button>
-                    </div>
                 </div>
                 <div class="col-lg-9" id="content">
-                    <div class="bg-white border border-dark">
-                        <p class="text-center font-weight-bold">Danh sách người dùng</p>
+                    <div class="bg-white border border-dark mb-5 rounded">
+                        <form class="col-lg-12 mt-3 mb-3">
+                            <h2 class="text-center">Tìm kiếm</h2>
+                            <div class="form-row">
+                              <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Tài khoản">
+                              </div>
+                              <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Họ và tên">
+                              </div>
+                              <div class="col-2">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Giới tính</option>
+                                    <option value="1">Nam</option>
+                                    <option value="2">Nữ</option>
+                                </select>
+                              </div>
+                              
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Tỉnh/Thành</option>
+                                    <option value="1">TP.Hồ Chí Minh</option>
+                                    <option value="2">Hà Nội</option>
+                                </select>
+                              </div>
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Quận/Huyện</option>
+                                    <option value="1">Quận 1</option>
+                                    <option value="2">Quận 2</option>
+                                    <option value="3">Quận 3</option>
+                                    <option value="4">Quận 4</option>
+                                    <option value="5">Quận 5</option>
+                                    <option value="6">Quận 6</option>
+                                    <option value="7">Quận 7</option>
+                                    <option value="8">Quận 8</option>
+                                    <option value="9">Quận 9</option>
+                                    <option value="10">Quận 10</option>
+                                    <option value="11">Quận 11</option>
+                                    <option value="12">Quận 12</option>
+                                </select>
+                              </div>
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Trạng thái</option>
+                                    <option value="1">Hoạt động</option>
+                                    <option value="2">Khoá Tài Khoản</option>
+                                </select>
+                              </div>
+                                <button class="btn btn-outline-success btn-rounded btn-sm my-0 form-control mt-3" type="submit">Tìm kiếm</button>
+                            </div>
+                          </form>
+                    </div>
+
+                    <div class="bg-white border border-dark rounded">
+                        <h3 class="text-center font-weight-bold">Danh sách người dùng</h3>
                         <table class="table table-striped">
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col" class="text-left">Tài khoản</th>
                                     <th scope="col" class="text-left">Họ và tên</th>
                                     <th scope="col">Số ĐT</th>
+                                    <th scope="col">Địa chỉ</th>
                                     <th scope="col">Giới tính</th>
                                     <th scope="col">Ngày sinh</th>
                                     <th scope="col">Trạng thái</th>
@@ -119,9 +155,10 @@
                                 <tr>
                                     <td class="text-left">LinhNV</td>
                                     <td class="text-left">Nguyễn Văn Linh</td>
-                                    <td>09302312123</td>
+                                    <td>0230212123</td>
+                                    <td>Quãng Ngãi</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>10/10/1999</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus1"
@@ -145,9 +182,10 @@
                                 <tr>
                                     <td class="text-left">TruongTN</td>
                                     <td class="text-left">Thân Nhật Trường</td>
-                                    <td>09123125776</td>
+                                    <td>0912312576</td>
+                                    <td>Quãng Nam</td>
                                     <td>Nam</td>
-                                    <td>12/12/1942</td>
+                                    <td>12/12/2000</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus2"
@@ -171,7 +209,8 @@
                                 <tr>
                                     <td class="text-left">NhiHN</td>
                                     <td class="text-left">Hoàng Ngọc Nhi</td>
-                                    <td>099402932</td>
+                                    <td>0994029323</td>
+                                    <td>Ninh Bình</td>
                                     <td>Nam</td>
                                     <td>10/10/1999</td>
                                     <td>
@@ -198,8 +237,9 @@
                                     <td class="text-left">MinhNT</td>
                                     <td class="text-left">Nguyễn Nhật Minh</td>
                                     <td>0992837261</td>
+                                    <td>Bình Thuận</td>
                                     <td>Nam</td>
-                                    <td>10/10/1995</td>
+                                    <td>09/03/1992</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="inactiveStatus4"
@@ -224,9 +264,10 @@
                                 <tr>
                                     <td class="text-left">AnhNT</td>
                                     <td class="text-left">Nguyễn Thuý Anh</td>
-                                    <td>0930239232</td>
+                                    <td>0230239232</td>
+                                    <td>Quãng Bình</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>14/12/1983</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus5"
@@ -251,8 +292,9 @@
                                     <td class="text-left">ToanVT</td>
                                     <td class="text-left">Võ Tiến Toàn</td>
                                     <td>0930239232</td>
+                                    <td>Quãng Trị</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>01/10/1984</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus6"
@@ -277,8 +319,9 @@
                                     <td class="text-left">NhatTT</td>
                                     <td class="text-left">Trần Thành Nhật</td>
                                     <td>0930239232</td>
+                                    <td>Bình Định</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>10/02/1975</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="inactiveStatus7"
@@ -304,9 +347,10 @@
                                 <tr>
                                     <td class="text-left">LinhHN</td>
                                     <td class="text-left">Hoàng Ngọc Linh</td>
-                                    <td>0930239232</td>
+                                    <td>0910119232</td>
+                                    <td>TP.HCM</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>20/10/1997</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus8"
@@ -330,9 +374,10 @@
                                 <tr>
                                     <td class="text-left">TramNK</td>
                                     <td class="text-left">Nguyễn Kim Trâm</td>
-                                    <td>0930239232</td>
+                                    <td>0920239299</td>
+                                    <td>Hà Nội</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>01/01/1964</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus9"
@@ -356,9 +401,10 @@
                                 <tr>
                                     <td class="text-left">TuanVT</td>
                                     <td class="text-left">Võ Trọng Tuấn</td>
-                                    <td>0930239232</td>
+                                    <td>0230239277</td>
+                                    <td>Bình Dương</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>12/08/1982</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus10"
@@ -382,9 +428,10 @@
                                 <tr>
                                     <td class="text-left">NhiNN</td>
                                     <td class="text-left">Nguyễn Ngọc Nhi</td>
-                                    <td>0930239232</td>
+                                    <td>0390239892</td>
+                                    <td>Quãng Nam</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>10/02/1980</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus11"
@@ -409,8 +456,9 @@
                                     <td class="text-left">NamHN</td>
                                     <td class="text-left">Hoàng Nhật Nam</td>
                                     <td>0930239232</td>
+                                    <td>Kon Tum</td>
                                     <td>Nam</td>
-                                    <td>10/10/1910</td>
+                                    <td>10/04/1973</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="text-white border-0" type="button" id="activeStatus12"

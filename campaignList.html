@@ -73,42 +73,72 @@
                             <i class="fas fa-tasks"></i> Quản lý Chiến dịch
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến
-                                dịch</a>
-                            <a class="dropdown-item font-weight-bold text-dark" href="#">Chỉnh sửa chiến dịch</a>
+                            <a class="dropdown-item font-weight-bold text-dark" href="./campaign.html">Tạo chiến dịch</a>
                             <a class="dropdown-item font-weight-bold text-dark" href="./campaignList.html">Danh sách chiến dịch</a>
                         </div>
                     </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="fas fa-chart-line"></i> Biểu đồ
-                        </button>
-                    </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="far fa-calendar-alt"></i> Calendar
-                        </button>
-                    </div>
-                    <div class="list-group-item menu_">
-                        <button class="font-weight-bold text-white" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: inherit; border: none;">
-                            <i class="far fa-file-alt"></i> Documentation
-                        </button>
-                    </div>
                 </div>
                 <div class="col-lg-9" id="content">
-                    <div class="bg-white border border-dark">
+                    <div class="bg-white border border-dark mb-5 rounded">
+                        <form class="col-lg-12 mt-3 mb-3">
+                            <h2 class="text-center">Tìm kiếm</h2>
+                            <div class="form-row">
+                              <div class="col-6">
+                                <input type="text" class="form-control" placeholder="Tên chiến dịch">
+                              </div>
+                              <div class="col-6">
+                                <input type="text" class="form-control" placeholder="Người tạo">
+                              </div>
+                              
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Tỉnh/Thành</option>
+                                    <option value="1">TP.Hồ Chí Minh</option>
+                                    <option value="2">Hà Nội</option>
+                                </select>
+                              </div>
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Quận/Huyện</option>
+                                    <option value="1">Quận 1</option>
+                                    <option value="2">Quận 2</option>
+                                    <option value="3">Quận 3</option>
+                                    <option value="4">Quận 4</option>
+                                    <option value="5">Quận 5</option>
+                                    <option value="6">Quận 6</option>
+                                    <option value="7">Quận 7</option>
+                                    <option value="8">Quận 8</option>
+                                    <option value="9">Quận 9</option>
+                                    <option value="10">Quận 10</option>
+                                    <option value="11">Quận 11</option>
+                                    <option value="12">Quận 12</option>
+                                </select>
+                              </div>
+                              <div class="col-4 mt-3">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Trạng thái</option>
+                                    <option value="1">Chờ phê duyệt</option>
+                                    <option value="2">Chờ quyên góp</option>
+                                    <option value="3">Đang diễn ra</option>
+                                    <option value="4">Hoàn thành</option>
+                                </select>
+                              </div>
+                                <button class="btn btn-outline-success btn-rounded btn-sm my-0 form-control mt-3" type="submit">Tìm kiếm</button>
+                            </div>
+                          </form>
+                    </div>
+
+                    <div class="bg-white border border-dark rounded">
                         <p class="text-center font-weight-bold">Danh sách chiến dịch</p>
                         <table class="table table-striped">
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col" class="text-left">Tên chiến dịch</th>
                                     <th scope="col" class="text-left">Địa điểm</th>
+                                    <th scope="col">Loại</th>
                                     <th scope="col">Ngày tạo</th>
                                     <th scope="col">Người tạo</th>
                                     <th scope="col">Trạng thái</th>
@@ -118,6 +148,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Giải cứu thăng long</a></td>
                                     <td class="text-left">Đồng Nai</td>
+                                    <td>Thiên tai</td>
                                     <td>12/12/1942</td>
                                     <td>Ngọc Trinh</td>
                                     <td>
@@ -150,6 +181,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Chung tay xây dựng nhà tình thương</a></td>
                                     <td class="text-left">Quảng Bình</td>
+                                    <td>Thiên tai</td>
                                     <td>12/12/1942</td>
                                     <td>Hoàng Thuỳ Linh</td>
                                     <td>
@@ -182,6 +214,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Hướng về miền Trung</a></td>
                                     <td class="text-left">Đà Nẵng</td>
+                                    <td>Thiên tai</td>
                                     <td>10/10/1999</td>
                                     <td>Biện Ngọc Nhi</td>
                                     <td>
@@ -214,6 +247,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Hướng về Biển Đông</a></td>
                                     <td class="text-left">Nha Trang</td>
+                                    <td>Thiên tai</td>
                                     <td>10/10/2020</td>
                                     <td>Hoàng Oanh</td>
                                     <td>
@@ -246,6 +280,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Vì tương lai đất nước</a></td>
                                     <td class="text-left">Nghệ An</td>
+                                    <td>Thiên tai</td>
                                     <td>10/10/2020</td>
                                     <td>Nguyễn Việt Văn</td>
                                     <td>
@@ -277,7 +312,8 @@
                                 </tr>
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Giải cứu rau xanh</a></td>
-                                    <td class="text-left">Quận 9</td>
+                                    <td class="text-left">TP.HCM</td>
+                                    <td>Khó khăn</td>
                                     <td>02/10/2020</td>
                                     <td>Hồ Ngọc Hà</td>
                                     <td>
@@ -309,7 +345,8 @@
                                 </tr>
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Chung tay xây dựng ước mơ</a></td>
-                                    <td class="text-left">Nhà tao</td>
+                                    <td class="text-left">Bé Trần Minh Tâm</td>
+                                    <td>Sức khoẻ</td>
                                     <td>12/09/2020</td>
                                     <td>Trấn Thành</td>
                                     <td>
@@ -343,6 +380,7 @@
                                 <tr>
                                     <td class="text-left"><a href="./campaignDetail.html" style="text-decoration: none; color: black;">Đấu trường danh vọng</a></td>
                                     <td class="text-left">Ninh Bình</td>
+                                    <td>Thiên tai</td>
                                     <td>10/10/2020</td>
                                     <td>Hoàng Vũ Điệp</td>
                                     <td>
